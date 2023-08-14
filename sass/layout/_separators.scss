@@ -1,0 +1,18 @@
+@use '../abstracts/' as *;
+
+.separator__block {
+	position: absolute;
+	height: 40px;
+	width: 60%;
+	background-color: $pure-white;
+	&--left {
+		bottom: 0px;
+		left: -50px;
+		transform: skew(45deg);
+	}
+	&--right {
+		top: 0;
+		right: -50px;
+		transform: skew(45deg);
+	}
+}

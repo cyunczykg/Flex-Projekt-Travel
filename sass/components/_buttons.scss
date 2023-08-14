@@ -1,0 +1,84 @@
+@use '../abstracts' as *;
+
+.burger-btn {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	padding: 1em;
+	background: none;
+	border: 1px solid transparent;
+	border-radius: 8px;
+	cursor: pointer;
+	z-index: 1000;
+
+	&:hover {
+		border: 1px solid $pure-white;
+	}
+
+	&:focus {
+		outline: none;
+		border: 1px solid rgba(255, 255, 255, 0.5);
+		border-radius: 8px;
+	}
+
+	&__box {
+		position: relative;
+		width: 40px;
+		height: 30px;
+	}
+
+	&__bars,
+	&__bars::before,
+	&__bars::after {
+		position: absolute;
+		right: 0;
+		height: 3px;
+		content: '';
+		background-color: $pure-white;
+		transition: width 0.3s;
+	}
+
+	&__bars {
+		width: 100%;
+		&::before {
+			top: 26px;
+			width: 20%;
+			transition-delay: 0.1s;
+		}
+		&::after {
+			top: 13px;
+			width: 60%;
+		}
+	}
+
+	:hover {
+		.burger-btn__bars::before,
+		.burger-btn__bars::after {
+			width: 100%;
+		}
+	}
+}
+
+.btn-animation {
+	position: relative;
+	transition: background-color 0.3s;
+	overflow: hidden;
+	z-index: 0;
+	&::before {
+		display: block;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 101%;
+		height: 101%;
+		transform: scalex(0);
+		transform-origin: right;
+		transition: transform 0.3s;
+		z-index: -1;
+	}
+	&:hover::before {
+		transform: scaleX(1);
+		transform-origin: left;
+	}
+}
