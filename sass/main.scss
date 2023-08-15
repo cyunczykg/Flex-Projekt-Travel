@@ -1,4 +1,4 @@
-@use 'abstracts';
+@use 'abstracts' as *;
 @use 'base';
 @use 'layout';
 @use 'components';
@@ -11,3 +11,35 @@
 // components/
 // pages/
 // themes/
+
+//Media queries
+@media (min-width: 768px) {
+	.separator__block {
+		height: 50px;
+		width: 45%;
+	}
+	.header {
+		&__title {
+			font-size: 6.6rem;
+		}
+		&__text {
+			font-size: 2.2rem;
+		}
+		&__btn {
+			font-size: 1.6rem;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.burger-btn {
+		top: 50px;
+		right: 50px;
+	}
+	.header {
+		background-image: $blue-gradient, url(../img/island-1285147_1920.jpg);
+		&__title {
+			font-size: 10rem;
+		}
+	}
+}
