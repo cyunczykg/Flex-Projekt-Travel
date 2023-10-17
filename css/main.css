@@ -66,6 +66,18 @@ body {
   transition: transform 0.3s;
 }
 
+@keyframes navItemsAnimation {
+  from {
+    transform: translateX(60vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.nav__item--animation {
+  animation: navItemsAnimation 0.3s both;
+}
+
 .header {
   position: relative;
   display: flex;

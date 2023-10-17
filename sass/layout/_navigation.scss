@@ -27,7 +27,7 @@
 		font-size: 2.8rem;
 		color: $pure-white;
 		text-decoration: none;
-        z-index: 100;
+		z-index: 100;
 		&::before {
 			position: absolute;
 			bottom: 0;
@@ -44,4 +44,17 @@
 			transition: transform 0.3s;
 		}
 	}
+}
+
+@keyframes navItemsAnimation {
+	from {
+		transform: translateX(60vw);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+.nav__item--animation {
+	animation: navItemsAnimation 0.3s both;
 }

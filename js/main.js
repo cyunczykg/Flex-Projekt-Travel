@@ -9,6 +9,16 @@ const handleNav = () => {
 			nav.classList.remove('nav__items--active')
 		);
 	});
+	handleNavAnimation();
+};
+
+const handleNavAnimation = () => {
+	let delayTime = 0.3;
+	AllNavItems.forEach((item) => {
+		item.classList.toggle('nav__item--animation');
+		item.style.animationDelay = delayTime + 's';
+		delayTime += 0.1;
+	});
 };
 
 navBtn.addEventListener('click', handleNav);
