@@ -13,11 +13,9 @@ const handleNav = () => {
 };
 
 const handleNavAnimation = () => {
-	let delayTime = 0.3;
-	AllNavItems.forEach((item) => {
+	AllNavItems.forEach((item, index) => {
 		item.classList.toggle('nav__item--animation');
-		item.style.animationDelay = delayTime + 's';
-		delayTime += 0.1;
+		item.style.animationDelay = 0.3 + (index-1)*0.1 + 's';
 	});
 };
 
